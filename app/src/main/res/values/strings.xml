@@ -1,0 +1,48 @@
+<resources>
+    <string name="app_name">GREENLAB</string>
+    <string name="alamat">Jl. Pertengahan RT 10/ RW 03 No.6, Cijantung, Kec. Ps. Rebo, Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta 13770</string>
+    <string name="master_activity">MENU MASTER</string>
+    <string name="master_sub">Kelola Data Pelanggan, Kategori Jasa dan Jenis Jasa Laundry</string>
+    <string name="transaksi_activity">MENU TRANSAKSI</string>
+    <string name="transaksi_sub">Kelola Data Terima Laundry, Proses Laundry dan Bayar Hutang</string>
+    <string name="card_master">MASTER</string>
+    <string name="card_master_sub">Menu data pelanggan, layanan dll</string>
+    <string name="card_transaksi">TRANSAKSI</string>
+    <string name="card_transaksi_sub">Menu pesan dan pembayaran transaksiLaundry</string>
+    <string name="card_laporan">LAPORAN</string>
+    <string name="card_laporan_sub">Menu laporan proses transaksiLaundry</string>
+    <string name="card_utilitas">TENTANG</string>
+    <string name="card_utilitas_sub">Menu tentang dan info aplikasi</string>
+    <string name="card_pelanggan">PELANGGAN</string>
+    <string name="card_pelanggan_sub">Kelola data pelanggan</string>
+    <string name="card_pengeluaran">PENGELUARAN</string>
+    <string name="card_pengeluaran_sub">Kelola data pengeluaran transaksiLaundry</string>
+    <string name="card_jasa">JASA</string>
+    <string name="card_jasa_sub">Kelola data jasa dari jenis kategori transaksiLaundry</string>
+    <string name="card_terima">TERIMA LAUNDRY</string>
+    <string name="card_terima_sub">Simpan dan catat pesanan dari pelanggan</string>
+    <string name="card_proses">PROSES LAUNDRY</string>
+    <string name="card_proses_sub">Periksa status transaksiLaundry yang sedang diproses</string>
+    <string name="card_bayar">BAYAR HUTANG</string>
+    <string name="card_bayar_sub">Kelola data hutang pelanggan</string>
+    <string name="card_kebut">KEBUTUHAN LAUNDRY</string>
+    <string name="card_kebut_sub">Kelola data kebutuhan laundry</string>
+    <string name="lanjut">LANJUT</string>
+    <string name="lewati">LEWATI</string>
+    <string name="intro_1_header">Bebas Kuota Internet</string>
+    <string name="intro_1">Aplikasi dapat digunakan secara offline/ tanpa koneksi internet</string>
+    <string name="intro_2_header">Pembuatan Laporan dengan Sekali Tekan</string>
+    <string name="intro_2">Mudah dalam membuat laporan sekaligus mencetaknya langsung</string>
+    <string name="intro_3_header">Mudah Digunakan</string>
+    <string name="intro_3">Dapat digunakan tanpa perlu banyak belajar untuk memahaminya</string>
+
+    <string name="string_permission_help">Help</string>
+    <string name="string_permission_help_text">The permission is missing. \n\nTo grant permission click on Settings, then Permisssion on. \n\nThen click back twice to return to the app</string>
+    <string name="string_permission_quit">Exit App</string>
+    <string name="string_settings">Settings</string>
+
+    <string-array name="prosesbayar">
+        <item>Tunai</item>
+        <item>Hutang</item>
+    </string-array>
+</resources>

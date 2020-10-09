@@ -1,0 +1,239 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    tools:context=".master.MasterActivity">
+
+    <androidx.appcompat.widget.Toolbar
+    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+    android:id="@+id/tulbar"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:background="@color/colorPrimaryDark"
+    app:layout_constraintBottom_toTopOf="@+id/textView4"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_marginTop="24dp"
+        android:gravity="center"
+        android:text="@string/master_activity"
+        android:textColor="@android:color/white"
+        android:textScaleX="1.4"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:gravity="center"
+        android:text="@string/master_sub"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/textView3"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <androidx.gridlayout.widget.GridLayout
+        android:id="@+id/grid_menu_master"
+        android:layout_width="match_parent"
+        android:layout_height="550dp"
+        android:layout_marginTop="120dp"
+        app:columnCount="2"
+        app:rowCount="2"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        tools:layout_editor_absoluteX="0dp">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_rowWeight="1"
+            app:layout_columnWeight="1"
+            app:layout_columnSpan="2"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_margin="16dp">
+                <ImageView
+                    android:id="@+id/img_pelanggan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    app:srcCompat="@drawable/ic_pelanggan"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <TextView
+                    android:id="@+id/txt_pelanggan_header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/card_pelanggan"
+                    android:textColor="#484848"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@id/img_pelanggan"
+                    app:layout_constraintStart_toStartOf="@id/img_pelanggan"
+                    app:layout_constraintTop_toBottomOf="@id/img_pelanggan" />
+                <View
+                    android:id="@+id/garis_pelanggan"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="4dp"
+                    android:background="#a9a9a9"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txt_pelanggan_header" />
+                <TextView
+                    android:id="@+id/txt_pelanggan_sub"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:text="@string/card_pelanggan_sub"
+                    android:textColor="#484848"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@id/garis_pelanggan"
+                    app:layout_constraintStart_toStartOf="@id/garis_pelanggan"
+                    app:layout_constraintTop_toBottomOf="@id/garis_pelanggan" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_rowWeight="1"
+            app:layout_columnWeight="1"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_margin="16dp">
+                <ImageView
+                    android:id="@+id/img_kategori"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    app:srcCompat="@drawable/ic_kategori"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <TextView
+                    android:id="@+id/txt_kategori_header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/card_pengeluaran"
+                    android:textColor="#484848"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@id/img_kategori"
+                    app:layout_constraintStart_toStartOf="@id/img_kategori"
+                    app:layout_constraintTop_toBottomOf="@id/img_kategori" />
+                <View
+                    android:id="@+id/garis_kategori"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="4dp"
+                    android:background="#a9a9a9"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txt_kategori_header" />
+                <TextView
+                    android:id="@+id/txt_kategori_sub"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:text="@string/card_pengeluaran_sub"
+                    android:textColor="#484848"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@id/garis_kategori"
+                    app:layout_constraintStart_toStartOf="@id/garis_kategori"
+                    app:layout_constraintTop_toBottomOf="@id/garis_kategori" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_rowWeight="1"
+            app:layout_columnWeight="1"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_margin="16dp">
+                <ImageView
+                    android:id="@+id/img_jasa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    app:srcCompat="@drawable/ic_jasa"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <TextView
+                    android:id="@+id/txt_jasa_header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/card_jasa"
+                    android:textColor="#484848"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@id/img_jasa"
+                    app:layout_constraintStart_toStartOf="@id/img_jasa"
+                    app:layout_constraintTop_toBottomOf="@id/img_jasa" />
+                <View
+                    android:id="@+id/garis_jasa"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="4dp"
+                    android:background="#a9a9a9"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txt_jasa_header" />
+                <TextView
+                    android:id="@+id/txt_jasa_sub"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:text="@string/card_jasa_sub"
+                    android:textColor="#484848"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@id/garis_jasa"
+                    app:layout_constraintStart_toStartOf="@id/garis_jasa"
+                    app:layout_constraintTop_toBottomOf="@id/garis_jasa" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+    </androidx.gridlayout.widget.GridLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

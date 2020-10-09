@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.skripsi.greenlab">
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".SplashScreenActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".IntroActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".MainActivity"/>
+        <activity android:name=".MasterActivity"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".MainActivity"/>
+        <activity android:name=".master.MasterPelangganList"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
+            android:parentActivityName=".MasterActivity"/>
+        <activity android:name=".master.MasterPelangganInput"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme2"
+            android:parentActivityName=".master.MasterPelangganList"/>
+        <activity android:name=".master.MasterJasaList"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
+            android:parentActivityName=".MasterActivity"/>
+        <activity android:name=".master.MasterJasaInput"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme2"
+            android:parentActivityName=".master.MasterJasaList"/>
+        <activity android:name=".LaporanActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme2"
+            android:parentActivityName=".MainActivity"/>
+        <activity android:name=".laporan.LaporanPelangganList"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
+            android:parentActivityName=".LaporanActivity"/>
+        <activity android:name=".laporan.LaporanJasaList"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
+            android:parentActivityName=".LaporanActivity"/>
+        <activity android:name=".laporan.LaporanTransaksiList"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
+            android:parentActivityName=".LaporanActivity"/>
+        <activity android:name=".laporan.LaporanKebutuhanList"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
+            android:parentActivityName=".LaporanActivity"/>
+        <activity android:name=".laporan.LaporanHutangList"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
+            android:parentActivityName=".LaporanActivity"/>
+        <activity android:name=".TransaksiActivity"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".MainActivity"/>
+        <activity android:name=".transaksi.TransaksiTerimaActivity"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".TransaksiActivity"/>
+        <activity android:name=".transaksi.TransaksiCariActivity"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".transaksi.TransaksiTerimaActivity"/>
+        <activity android:name=".transaksi.TransaksiCetakActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme2"
+            android:parentActivityName=".TransaksiActivity"/>
+        <activity android:name=".transaksi.TransaksiProsesActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
+            android:parentActivityName=".TransaksiActivity"/>
+        <activity android:name=".transaksi.TransaksiProsesStatusActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
+            android:parentActivityName=".transaksi.TransaksiProsesActivity"/>
+        <activity android:name=".transaksi.TransaksiHutangActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
+            android:parentActivityName=".TransaksiActivity"/>
+        <activity android:name=".transaksi.TransaksiHutangBayarActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
+            android:parentActivityName=".transaksi.TransaksiHutangActivity"/>
+        <activity android:name=".transaksi.TransaksiKebutuhanActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme2"
+            android:parentActivityName=".TransaksiActivity"/>
+        <activity android:name=".TentangActivity"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".MainActivity"/>
+        <activity android:name=".PermissionsActivity"
+            android:screenOrientation="portrait"/>
+        <provider
+            android:authorities="${applicationId}.fileprovider"
+            android:name="androidx.core.content.FileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths"/>
+        </provider>
+    </application>
+
+</manifest>

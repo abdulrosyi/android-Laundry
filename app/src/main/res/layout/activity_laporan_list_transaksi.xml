@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EEEEEE">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tulbar_laporanpelanggan"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimaryDark"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/search_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        app:layout_constraintTop_toBottomOf="@id/tulbar_laporanpelanggan"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/colorPrimaryDark">
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/txt_cari_laporantransaksi"
+            android:background="@drawable/corners"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:queryHint="Cari Transaksi" />
+
+        <Button
+            android:id="@+id/btn_tgldari"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/corners"
+            android:text="01/08/2020"
+            android:textColor="@color/colorPrimaryDark"
+            app:layout_constraintStart_toStartOf="@+id/txt_cari_laporantransaksi"
+            app:layout_constraintTop_toBottomOf="@+id/txt_cari_laporantransaksi" />
+        <Button
+            android:layout_marginTop="10dp"
+            android:id="@+id/btn_tglsampai"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/corners"
+            android:text="01/08/2020"
+            android:textColor="@color/colorPrimaryDark"
+            app:layout_constraintEnd_toEndOf="@+id/txt_cari_laporantransaksi"
+            app:layout_constraintTop_toBottomOf="@+id/txt_cari_laporantransaksi" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:id="@+id/jml_pesanan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Jumlah pesanan diterima : "
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/search_layout"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_laporantransaksi"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="12dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/cetak_pdf"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/jml_pendapatan"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:textColor="@android:color/white"
+        android:background="@color/colorPrimaryDark"
+        android:id="@+id/cetak_pdf"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CETAK PDF"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:id="@+id/jml_pendapatan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Jumlah pendapatan : "
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/jml_pesanan" />
+</androidx.constraintlayout.widget.ConstraintLayout>

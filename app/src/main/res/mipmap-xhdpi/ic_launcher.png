@@ -1,0 +1,100 @@
+package com.goblo.skripshit;
+
+import androidx.room.DatabaseConfiguration;
+import androidx.room.InvalidationTracker;
+import androidx.room.RoomOpenHelper;
+import androidx.room.RoomOpenHelper.Delegate;
+import androidx.room.RoomOpenHelper.ValidationResult;
+import androidx.room.util.DBUtil;
+import androidx.room.util.TableInfo;
+import androidx.room.util.TableInfo.Column;
+import androidx.room.util.TableInfo.ForeignKey;
+import androidx.room.util.TableInfo.Index;
+import androidx.sqlite.db.SupportSQLiteDatabase;
+import androidx.sqlite.db.SupportSQLiteOpenHelper;
+import androidx.sqlite.db.SupportSQLiteOpenHelper.Callback;
+import androidx.sqlite.db.SupportSQLiteOpenHelper.Configuration;
+import com.goblo.skripshit.master.jasa.JasaDAO;
+import com.goblo.skripshit.master.jasa.JasaDAO_Impl;
+import com.goblo.skripshit.master.kategori.KategoriDAO;
+import com.goblo.skripshit.master.kategori.KategoriDAO_Impl;
+import com.goblo.skripshit.master.pelanggan.PelangganDAO;
+import com.goblo.skripshit.master.pelanggan.PelangganDAO_Impl;
+import java.lang.Override;
+import java.lang.String;
+import java.lang.SuppressWarnings;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
+
+@SuppressWarnings({"unchecked", "deprecation"})
+public final class AppDatabase_Impl extends AppDatabase {
+  private volatile PelangganDAO _pelangganDAO;
+
+  private volatile KategoriDAO _kategoriDAO;
+
+  private volatile JasaDAO _jasaDAO;
+
+  @Override
+  protected SupportSQLiteOpenHelper createOpenHelper(DatabaseConfiguration configuration) {
+    final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(configuration, new RoomOpenHelper.Delegate(1) {
+      @Override
+      public void createAllTables(SupportSQLiteDatabase _db) {
+        _db.execSQL("CREATE TABLE IF NOT EXISTS `tabel_pelanggan` (`nomer_pelanggan` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `nama_pelanggan` TEXT NOT NULL, `alamat_pelanggan` TEXT NOT NULL, `telp_pelanggan` TEXT NOT NULL)");
+        _db.execSQL("CREATE TABLE IF NOT EXISTS `tabel_kategori` (`nomer` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `nama_kategori` TEXT NOT NULL)");
+        _db.execSQL("CREATE TABLE IF NOT EXISTS `tabel_jasa` (`nomer` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `namakategori` TEXT NOT NULL, `namajasa` TEXT NOT NULL, `hargajasa` INTEGER NOT NULL, `satuanjasa` TEXT NOT NULL)");
+        _db.execSQL("CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)");
+        _db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'cd4d99fa4d3a15bd8230beafaca80778')");
+      }
+
+      @Override
+      public void dropAllTables(SupportSQLiteDatabase _db) {
+        _db.execSQL("DROP TABLE IF EXISTS `tabel_pelanggan`");
+        _db.execSQL("DROP TABLE IF EXISTS `tabel_kategori`");
+        _db.execSQL("DROP TABLE IF EXISTS `tabel_jasa`");
+        if (mCallbacks != null) {
+          for (int _i = 0, _size = mCallbacks.size(); _i < _size; _i++) {
+            mCallbacks.get(_i).onDestructiveMigration(_db);
+          }
+        }
+      }
+
+      @Override
+      protected void onCreate(SupportSQLiteDatabase _db) {
+        if (mCallbacks != null) {
+          for (int _i = 0, _size = mCallbacks.size(); _i < _size; _i++) {
+            mCallbacks.get(_i).onCreate(_db);
+          }
+        }
+      }
+
+      @Override
+      public void onOpen(SupportSQLiteDatabase _db) {
+        mDatabase = _db;
+        internalInitInvalidationTracker(_db);
+        if (mCallbacks != null) {
+          for (int _i = 0, _size = mCallbacks.size(); _i < _size; _i++) {
+            mCallbacks.get(_i).onOpen(_db);
+          }
+        }
+      }
+
+      @Override
+      public void onPreMigrate(SupportSQLiteDatabase _db) {
+        DBUtil.dropFtsSyncTriggers(_db);
+      }
+
+      @Override
+      public void onPostMigrate(SupportSQLiteDatabase _db) {
+      }
+
+      @Override
+      protected RoomOpenHelper.ValidationResult onValidateSchema(SupportSQLiteDatabase _db) {
+        final HashMap<String, TableInfo.Column> _columnsTabelPelanggan = new HashMap<String, TableInfo.Column>(4);
+        _columnsTabelPelanggan.put("nomer_pelanggan", new TableInfo.Column("nomer_pelanggan", "INTEGER", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsTabelPelanggan.put("nama_pelanggan", new TableInfo.Column("nama_pelanggan", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsTabelPelanggan.put("alamat_pelanggan", new TableInfo.Column("alamat_pelanggan", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsTabelPelanggan.put("telp_pelanggan", new TableInfo.Column("telp_pelanggan", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        final HashSet<TableInfo.ForeignKey> _foreignKeysTabelPelanggan = new HashSet<TableInfo.ForeignKey>(0);
+        final HashSet<TableInfo.Index> _indicesTabelPelanggan = new HashSet<TableInfo.Index>(0);
+        final TableInfo _infoTabelPelan
